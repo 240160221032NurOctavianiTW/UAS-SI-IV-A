@@ -129,7 +129,7 @@ Apapun tema yang Anda pilih, aplikasi Anda **WAJIB** memiliki komponen dan fungs
 
 
 3. Lakukan *Push* hasil akhir proyek ke repositori kelas:
-👉 [https://github.com/PBWFEND/UAS-SI-IV-B](https://github.com/PBWFEND/UAS-SI-IV-A)
+👉 [https://github.com/PBWFEND/UAS-SI-IV-A](https://github.com/PBWFEND/UAS-SI-IV-A)
 
 ---
 
