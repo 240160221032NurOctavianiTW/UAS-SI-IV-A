@@ -85,6 +85,11 @@ function App() {
 
     })
 
+  // NOTIFICATION
+  const [notification,
+    setNotification]
+    = useState("")
+
   // FILTER CATEGORY
   const [selectedCategory,
     setSelectedCategory]
@@ -101,7 +106,6 @@ function App() {
     = useState("")
 
   // EDIT STATES
-
   const [editingProduct,
     setEditingProduct]
     = useState(null)
@@ -114,7 +118,88 @@ function App() {
     setEditingBrand]
     = useState(null)
 
+  // =================================
+  // SHOW NOTIFICATION
+  // =================================
+
+  const showNotification = (
+    message
+  ) => {
+
+    setNotification(message)
+
+    setTimeout(() => {
+
+      setNotification("")
+
+    }, 3000)
+
+  }
+
+  // =================================
+  // WRAPPER FUNCTIONS
+  // =================================
+
+  const handleSetProducts = (
+    newProducts
+  ) => {
+
+    if (
+      newProducts.length >
+      products.length
+    ) {
+
+      showNotification(
+        "✨ Product berhasil ditambahkan"
+      )
+
+    }
+
+    setProducts(newProducts)
+
+  }
+
+  const handleSetCategories = (
+    newCategories
+  ) => {
+
+    if (
+      newCategories.length >
+      categories.length
+    ) {
+
+      showNotification(
+        "📁 Category berhasil ditambahkan"
+      )
+
+    }
+
+    setCategories(newCategories)
+
+  }
+
+  const handleSetBrands = (
+    newBrands
+  ) => {
+
+    if (
+      newBrands.length >
+      brands.length
+    ) {
+
+      showNotification(
+        "💖 Brand berhasil ditambahkan"
+      )
+
+    }
+
+    setBrands(newBrands)
+
+  }
+
+  // =================================
   // LOADING EFFECT
+  // =================================
 
   useEffect(() => {
 
@@ -129,7 +214,9 @@ function App() {
 
   }, [])
 
+  // =================================
   // LOCAL STORAGE
+  // =================================
 
   useEffect(() => {
 
@@ -158,7 +245,9 @@ function App() {
 
   }, [brands])
 
+  // =================================
   // LOADING SCREEN
+  // =================================
 
   if (loading) {
 
@@ -170,11 +259,26 @@ function App() {
 
     <div className="app-layout">
 
-      {/* SIDEBAR */}
+      {/* BACKGROUND */}
 
       <div className="bg-blob blob1"></div>
-<div className="bg-blob blob2"></div>
-<div className="bg-blob blob3"></div>
+      <div className="bg-blob blob2"></div>
+      <div className="bg-blob blob3"></div>
+
+      {/* NOTIFICATION */}
+
+      {notification && (
+
+        <div className="notification">
+
+          {notification}
+
+        </div>
+
+      )}
+
+      {/* SIDEBAR */}
+
       <Sidebar
 
         activePage={activePage}
@@ -256,7 +360,7 @@ function App() {
             products={products}
 
             setProducts={
-              setProducts
+              handleSetProducts
             }
 
             categories={categories}
@@ -285,7 +389,7 @@ function App() {
             categories={categories}
 
             setCategories={
-              setCategories
+              handleSetCategories
             }
 
             editingCategory={
@@ -310,7 +414,7 @@ function App() {
             brands={brands}
 
             setBrands={
-              setBrands
+              handleSetBrands
             }
 
             editingBrand={
