@@ -77,7 +77,7 @@ function DashboardPage({
     </h1>
 
     <p>
-      Manage your beauty collection with elegant modern dashboard.
+      Manage your beauty collection 
     </p>
 
   </div>

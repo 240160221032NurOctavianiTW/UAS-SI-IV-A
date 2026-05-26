@@ -26,6 +26,9 @@ function LoadingScreen() {
       <h2 className="loading-title">
         Blush & Bloom
       </h2>
+      <h3 className="loading-title">
+        aplikasi ini dibuat oleh Della, Fauzan, Nur
+      </h3>
 
       {/* BAR */}
 
