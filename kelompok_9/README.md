@@ -138,7 +138,7 @@ vite.config.js
 README.md
 
 🌐 Deploy
-
+https://blushandbloom-pi.vercel.app/
 
 🛠️ Built With
 React JS
